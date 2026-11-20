@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 13: Nuclei — Interactive NCERT Exercise E-Book | Hrishikesh M (PGT Physics)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f0f4ff 0%, #f8fafc 45%, #fdf4ff 100%);
+      color: #0f172a;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+    }
+    .step-fade-in {
+      animation: fadeSlide 0.32s ease-out forwards;
+    }
+    @keyframes fadeSlide {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .nuclide {
+      display: inline-flex;
+      align-items: center;
+      vertical-align: middle;
+      line-height: 1;
+      margin: 0 1px;
+    }
+    .nuclide-stack {
+      display: inline-flex;
+      flex-direction: column;
+      text-align: right;
+      font-size: 0.72em;
+      line-height: 1.05;
+      margin-right: 2px;
+      font-weight: 600;
+    }
+    @media print {
+      .no-print { display: none !important; }
+      body { background: #ffffff !important; }
+      .glass-card { box-shadow: none !important; border: 1px solid #cbd5e1 !important; }
+    }
+  </style>
+</head>
+<body class="min-h-screen antialiased selection:bg-indigo-600 selection:text-white">
+
+  <!-- Top Navigation & Teacher Attribution Banner -->
+  <header class="sticky top-0 z-40 bg-gradient-to-r from-indigo-900 via-blue-900 to-purple-900 text-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <!-- Custom SVG Nucleus Emblem -->
+          <div class="w-11 h-11 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center shrink-0 shadow-inner">
+            <svg class="w-7 h-7 text-amber-300" viewBox="0 0 64 64" fill="none">
+              <ellipse cx="32" cy="32" rx="26" ry="10" transform="rotate(30 32 32)" stroke="currentColor" stroke-width="2.5" opacity="0.7"/>
+              <ellipse cx="32" cy="32" rx="26" ry="10" transform="rotate(-30 32 32)" stroke="#38bdf8" stroke-width="2.5" opacity="0.7"/>
+              <ellipse cx="32" cy="32" rx="26" ry="10" transform="rotate(90 32 32)" stroke="#f472b6" stroke-width="2.5" opacity="0.7"/>
+              <circle cx="29" cy="30" r="4.5" fill="#fb7185"/>
+              <circle cx="35" cy="30" r="4.5" fill="#38bdf8"/>
+              <circle cx="32" cy="35" r="4.5" fill="#fbbf24"/>
+              <circle cx="32" cy="27" r="4" fill="#a78bfa"/>
+            </svg>
+          </div>
+          <div>
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider rounded-full bg-amber-400 text-slate-950">NCERT Class XII Physics</span>
+              <span class="px-2.5 py-0.5 text-xs font-semibold rounded-full bg-white/15 text-blue-100">Chapter 13 • Exercises (13.1 – 13.10)</span>
+            </div>
+            <h1 class="text-lg sm:text-xl font-extrabold tracking-tight mt-0.5">NUCLEI — Interactive Exercise Solution E-Book</h1>
+          </div>
+        </div>
+
+        <!-- Credit Badge & Classroom Controls -->
+        <div class="flex flex-wrap items-center gap-2.5">
+          <div class="px-3.5 py-1.5 rounded-xl bg-white/10 border border-white/20 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-xs sm:text-sm font-medium text-blue-100">Created by <strong class="text-white font-bold">Hrishikesh M, (PGT Physics)</strong></span>
+          </div>
+          <button onclick="window.print()" class="no-print px-3 py-1.5 rounded-xl bg-white/15 hover:bg-white/25 text-xs font-semibold transition flex items-center gap-1.5" title="Print or Save as PDF">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+            <span>Print</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+
+    <!-- Interactive Control Bar: Constants Drawer, Mode Switcher & Progress -->
+    <section class="glass-card rounded-2xl p-4 sm:p-5 shadow-sm no-print">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+        <!-- View Mode Tabs -->
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="tab-ebook" onclick="switchView('ebook')" class="px-4 py-2 rounded-xl text-sm font-bold bg-indigo-600 text-white shadow-sm transition">
+            📖 E-Book Solutions (10)
+          </button>
+          <button id="tab-visuals" onclick="switchView('visuals')" class="px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+            📊 Interactive Physics Lab
+          </button>
+          <button id="tab-quiz" onclick="switchView('quiz')" class="px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+            🎯 Classroom Quick Quiz
+          </button>
+          <button onclick="toggleConstants()" class="px-4 py-2 rounded-xl text-sm font-semibold bg-amber-100 text-amber-900 hover:bg-amber-200 border border-amber-300 transition flex items-center gap-1.5">
+            <span>⚛️ NCERT Constants & Formulae</span>
+            <svg id="const-chevron" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+        </div>
+
+        <!-- Classroom Progress Bar -->
+        <div class="flex items-center gap-3 bg-slate-50 px-4 py-2 rounded-xl border border-slate-200">
+          <div class="text-xs font-semibold text-slate-600">
+            Class Progress: <span id="progress-text" class="text-indigo-700 font-bold">0 / 10 Solved</span>
+          </div>
+          <div class="w-28 sm:w-36 h-2.5 bg-slate-200 rounded-full overflow-hidden">
+            <div id="progress-bar" class="h-full bg-gradient-to-r from-indigo-500 to-emerald-500 rounded-full transition-all duration-300" style="width: 0%"></div>
+          </div>
+          <button onclick="revealAllSolutions()" class="text-xs font-bold text-indigo-600 hover:text-indigo-800 underline">
+            Expand All
+          </button>
+        </div>
+      </div>
+
+      <!-- Collapsible NCERT Data & Formula Reference Sheet (Exact values from PDF Page 16) -->
+      <div id="constants-panel" class="hidden mt-4 pt-4 border-t border-slate-200 step-fade-in">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wider">Standard Data Given in NCERT Chapter 13 Exercises (Page 321)</h2>
+          <span class="text-xs text-slate-500">Use these exact values for CBSE Board calculations</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 text-xs font-mono">
+          <div class="p-2.5 rounded-xl bg-blue-50 border border-blue-200">
+            <div class="text-blue-600 font-sans font-semibold">Elementary Charge</div>
+            <div class="font-bold text-slate-900 mt-0.5">e = 1.6 × 10⁻¹⁹ C</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-indigo-50 border border-indigo-200">
+            <div class="text-indigo-600 font-sans font-semibold">Coulomb Constant</div>
+            <div class="font-bold text-slate-900 mt-0.5">1/(4πε₀) = 9×10⁹ N·m²/C²</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-purple-50 border border-purple-200">
+            <div class="text-purple-600 font-sans font-semibold">Avogadro Number</div>
+            <div class="font-bold text-slate-900 mt-0.5">N = 6.023 × 10²³ mol⁻¹</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-pink-50 border border-pink-200">
+            <div class="text-pink-600 font-sans font-semibold">Energy Equivalence</div>
+            <div class="font-bold text-slate-900 mt-0.5">1 u = 931.5 MeV/c²</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-amber-50 border border-amber-200">
+            <div class="text-amber-700 font-sans font-semibold">MeV to Joules</div>
+            <div class="font-bold text-slate-900 mt-0.5">1 MeV = 1.6 × 10⁻¹³ J</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200">
+            <div class="text-emerald-700 font-sans font-semibold">1 Year in Seconds</div>
+            <div class="font-bold text-slate-900 mt-0.5">1 yr = 3.154 × 10⁷ s</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-100 border border-slate-200">
+            <div class="text-slate-600 font-sans font-semibold">Hydrogen Atom Mass</div>
+            <div class="font-bold text-slate-900 mt-0.5">m_H = 1.007825 u</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-100 border border-slate-200">
+            <div class="text-slate-600 font-sans font-semibold">Neutron Mass</div>
+            <div class="font-bold text-slate-900 mt-0.5">m_n = 1.008665 u</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-100 border border-slate-200">
+            <div class="text-slate-600 font-sans font-semibold">Helium-4 Mass</div>
+            <div class="font-bold text-slate-900 mt-0.5">m(⁴He) = 4.002603 u</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-100 border border-slate-200">
+            <div class="text-slate-600 font-sans font-semibold">Electron Mass</div>
+            <div class="font-bold text-slate-900 mt-0.5">m_e = 0.000548 u</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-cyan-50 border border-cyan-200 col-span-2">
+            <div class="text-cyan-700 font-sans font-semibold">Key Formulas</div>
+            <div class="font-bold text-slate-900 mt-0.5">Δm = [Z·m_H + (A−Z)m_n] − M_atom &nbsp;|&nbsp; R = R₀A¹/³</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 1: INTERACTIVE E-BOOK SOLUTIONS -->
+    <div id="view-ebook" class="space-y-6">
+      <!-- Topic Filter & Quick Question Jump Bar -->
+      <div class="glass-card rounded-2xl p-4 shadow-sm no-print space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div class="flex flex-wrap items-center gap-1.5" id="topic-filters">
+            <button onclick="filterTopic('all')" data-topic="all" class="topic-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-900 text-white transition">All Questions (10)</button>
+            <button onclick="filterTopic('binding')" data-topic="binding" class="topic-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-blue-50 text-blue-700 hover:bg-blue-100 transition">Binding Energy (13.1–13.3)</button>
+            <button onclick="filterTopic('size')" data-topic="size" class="topic-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition">Nuclear Size & Density (13.4, 13.10)</button>
+            <button onclick="filterTopic('qvalue')" data-topic="qvalue" class="topic-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-purple-50 text-purple-700 hover:bg-purple-100 transition">Q-Value & Reactions (13.5–13.6)</button>
+            <button onclick="filterTopic('energy')" data-topic="energy" class="topic-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-amber-50 text-amber-800 hover:bg-amber-100 transition">Fission, Fusion & Barrier (13.7–13.9)</button>
+          </div>
+          <div class="relative w-full sm:w-64">
+            <input id="search-input" type="text" oninput="renderQuestions()" placeholder="Search nuclide, formula, Q13.7..." class="w-full pl-9 pr-3 py-1.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white" />
+            <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+        </div>
+
+        <!-- Quick Question Jump Pills -->
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-1">
+          <span class="text-xs font-semibold text-slate-500 mr-1 shrink-0">Jump to:</span>
+          <div id="jump-pills" class="flex items-center gap-1.5"></div>
+        </div>
+      </div>
+
+      <!-- Questions Container -->
+      <div id="questions-container" class="space-y-6"></div>
+    </div>
+
+    <!-- VIEW 2: INTERACTIVE PHYSICS LAB (VISUALIZATIONS) -->
+    <div id="view-visuals" class="hidden space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Interactive Binding Energy Curve Explorer (Fig 13.1) -->
+        <div class="glass-card rounded-2xl p-5 shadow-sm">
+          <div class="flex items-center justify-between mb-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-indigo-100 text-indigo-800">NCERT Fig. 13.1 Interactive</span>
+            <span class="text-xs text-slate-500">Click a nucleus to inspect Exercise data</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-slate-900">Binding Energy per Nucleon (E<sub>bn</sub> vs A)</h3>
+          <p class="text-xs text-slate-600 mt-1">Explore why <sup>56</sup>Fe is maximally stable (Q13.2 & Q13.6) and why heavy fission (<sup>239</sup>Pu, Q13.7) & light fusion (<sup>2</sup>H, Q13.8) release energy.</p>
+
+          <div class="mt-4 bg-slate-900 rounded-xl p-3 text-white">
+            <svg id="be-chart" viewBox="0 0 500 260" class="w-full h-auto">
+              <!-- Grid Lines -->
+              <line x1="50" y1="220" x2="480" y2="220" stroke="#475569" stroke-width="1.5"/>
+              <line x1="50" y1="20" x2="50" y2="220" stroke="#475569" stroke-width="1.5"/>
+              <line x1="50" y1="180" x2="480" y2="180" stroke="#334155" stroke-dasharray="4"/>
+              <line x1="50" y1="140" x2="480" y2="140" stroke="#334155" stroke-dasharray="4"/>
+              <line x1="50" y1="100" x2="480" y2="100" stroke="#334155" stroke-dasharray="4"/>
+              <line x1="50" y1="60" x2="480" y2="60" stroke="#334155" stroke-dasharray="4"/>
+              <!-- Labels -->
+              <text x="15" y="130" fill="#94a3b8" font-size="11" transform="rotate(-90 15 130)">E_bn (MeV)</text>
+              <text x="235" y="250" fill="#94a3b8" font-size="11">Mass Number (A)</text>
+              <text x="32" y="224" fill="#94a3b8" font-size="10">0</text>
+              <text x="32" y="184" fill="#94a3b8" font-size="10">2</text>
+              <text x="32" y="144" fill="#94a3b8" font-size="10">4</text>
+              <text x="32" y="104" fill="#94a3b8" font-size="10">6</text>
+              <text x="32" y="64" fill="#94a3b8" font-size="10">8</text>
+              <text x="27" y="26" fill="#94a3b8" font-size="10">10</text>
+              <text x="135" y="236" fill="#94a3b8" font-size="10">50</text>
+              <text x="220" y="236" fill="#94a3b8" font-size="10">100</text>
+              <text x="305" y="236" fill="#94a3b8" font-size="10">150</text>
+              <text x="390" y="236" fill="#94a3b8" font-size="10">200</text>
+              <text x="465" y="236" fill="#94a3b8" font-size="10">250</text>
+              <!-- Curve -->
+              <path d="M 54 198 L 57 86 L 62 110 L 71 68 L 75 72 L 78 60 L 105 50 L 146 44 L 222 49 L 268 53 L 366 62 L 408 63 L 458 68" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+              <!-- Interactive Points -->
+              <g class="cursor-pointer" onclick="selectNucleus('2H')">
+                <circle cx="54" cy="198" r="6" fill="#f43f5e" stroke="#fff" stroke-width="1.5"/>
+                <text x="61" y="202" fill="#fda4af" font-size="10" font-weight="bold">²H (Q13.8)</text>
+              </g>
+              <g class="cursor-pointer" onclick="selectNucleus('4He')">
+                <circle cx="57" cy="86" r="6" fill="#fbbf24" stroke="#fff" stroke-width="1.5"/>
+                <text x="64" y="85" fill="#fde047" font-size="10" font-weight="bold">⁴He</text>
+              </g>
+              <g class="cursor-pointer" onclick="selectNucleus('14N')">
+                <circle cx="75" cy="72" r="6" fill="#34d399" stroke="#fff" stroke-width="1.5"/>
+                <text x="82" y="75" fill="#6ee7b7" font-size="10" font-weight="bold">¹⁴N (Q13.1)</text>
+              </g>
+              <g class="cursor-pointer" onclick="selectNucleus('56Fe')">
+                <circle cx="146" cy="44" r="7" fill="#fb7185" stroke="#fff" stroke-width="2"/>
+                <text x="135" y="32" fill="#fda4af" font-size="11" font-weight="bold">⁵⁶Fe (Peak: Q13.2, 13.6)</text>
+              </g>
+              <g class="cursor-pointer" onclick="selectNucleus('209Bi')">
+                <circle cx="408" cy="63" r="6" fill="#c084fc" stroke="#fff" stroke-width="1.5"/>
+                <text x="380" y="52" fill="#e9d5ff" font-size="10" font-weight="bold">²⁰⁹Bi (Q13.2)</text>
+              </g>
+              <g class="cursor-pointer" onclick="selectNucleus('239Pu')">
+                <circle cx="458" cy="68" r="6" fill="#f97316" stroke="#fff" stroke-width="1.5"/>
+                <text x="415" y="84" fill="#fdba74" font-size="10" font-weight="bold">²³⁹Pu (Q13.7)</text>
+              </g>
+            </svg>
+          </div>
+          <div id="nucleus-inspector" class="mt-3 p-3.5 rounded-xl bg-indigo-50 border border-indigo-200 text-xs text-slate-800">
+            <strong>Selected: ⁵⁶Fe (Iron-56)</strong> — Total Binding Energy = <span class="font-mono font-bold text-indigo-700">492.26 MeV</span> | Binding Energy/Nucleon = <span class="font-mono font-bold text-emerald-700">8.79 MeV</span>. Located near the peak of stability!
+          </div>
+        </div>
+
+        <!-- Interactive Coulomb Potential Barrier Simulator (Exercise 13.9) -->
+        <div class="glass-card rounded-2xl p-5 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800">Exercise 13.9 Simulator</span>
+              <span class="text-xs font-mono font-semibold text-slate-500">r_deuteron = 2.0 fm</span>
+            </div>
+            <h3 class="text-lg font-extrabold text-slate-900">Deuteron–Deuteron Head-On Coulomb Barrier</h3>
+            <p class="text-xs text-slate-600 mt-1">Slide to bring two deuterons (<sup>2</sup><sub>1</sub>H) closer until they touch at center-to-center distance <strong>d = 2R = 4.0 fm</strong>.</p>
+
+            <!-- Visual Collision Canvas -->
+            <div class="mt-4 bg-slate-900 rounded-xl p-4 relative overflow-hidden">
+              <div class="flex items-center justify-between text-xs text-slate-400 font-mono mb-3">
+                <span>Separation d: <strong id="sim-dist" class="text-amber-300">10.0 fm</strong></span>
+                <span>Coulomb Energy U: <strong id="sim-energy" class="text-emerald-400">144.0 keV</strong></span>
+              </div>
+              <div class="h-28 flex items-center justify-center relative">
+                <!-- Center Contact Line -->
+                <div class="absolute h-20 border-l border-dashed border-slate-600 left-1/2"></div>
+                <!-- Left Deuteron -->
+                <div id="deuteron-left" class="w-12 h-12 rounded-full bg-gradient-to-br from-rose-500 to-amber-500 border-2 border-white flex items-center justify-center text-white font-bold text-xs shadow-lg transition-all duration-75" style="transform: translateX(-60px);">
+                  ²H⁺
+                </div>
+                <!-- Right Deuteron -->
+                <div id="deuteron-right" class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 border-2 border-white flex items-center justify-center text-white font-bold text-xs shadow-lg transition-all duration-75" style="transform: translateX(60px);">
+                  ²H⁺
+                </div>
+              </div>
+              <div id="sim-status" class="text-center text-xs font-semibold text-cyan-300 mt-1">
+                Approaching: Electrostatic repulsion increasing as 1/d
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 space-y-2">
+            <div class="flex justify-between text-xs font-semibold text-slate-700">
+              <span>Touching (d = 4.0 fm)</span>
+              <span>Far Apart (d = 20.0 fm)</span>
+            </div>
+            <input id="dist-slider" type="range" min="4" max="20" step="0.5" value="10" oninput="updateBarrierSim(this.value)" class="w-full accent-indigo-600 cursor-pointer" />
+            <div class="p-3 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-950">
+              <strong>Formula:</strong> U = (1/4πε₀) · (e² / d). At contact (d = 4.0 fm), <strong>U<sub>max</sub> = 360 keV</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 3: CLASSROOM QUICK QUIZ -->
+    <div id="view-quiz" class="hidden">
+      <div class="glass-card rounded-2xl p-6 shadow-sm max-w-3xl mx-auto">
+        <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-5">
+          <div>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">Post-Exercise Assessment</span>
+            <h2 class="text-xl font-extrabold text-slate-900 mt-1">NCERT Chapter 13 Exercise Mastery Check</h2>
+          </div>
+          <div class="text-right">
+            <div class="text-xs text-slate-500">Score</div>
+            <div id="quiz-score" class="text-2xl font-extrabold text-indigo-600">0 / 10</div>
+          </div>
+        </div>
+        <div id="quiz-container" class="space-y-5"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Attribution -->
+  <footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-8 border-t border-slate-200 text-center space-y-1.5">
+    <p class="text-sm font-bold text-slate-800">
+      Interactive Physics E-Book Module • Conceptualized & Created by <span class="text-indigo-700">Hrishikesh M, (PGT Physics)</span>
+    </p>
+    <p class="text-xs text-slate-500">
+      Strictly aligned with NCERT Class XII Physics Textbook (Chapter 13: Nuclei, Rationalized Syllabus).
+    </p>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 hidden px-4 py-2.5 rounded-xl bg-slate-900 text-white text-xs font-semibold shadow-xl"></div>
+
+  <script>
+    // Helper to render crisp nuclear notation like 14_7 N
+    function nuc(A, Z, sym) {
+      return `<span class="nuclide"><span class="nuclide-stack"><span>${A}</span><span>${Z}</span></span><span class="font-semibold">${sym}</span></span>`;
+    }
+
+    // Complete Dataset of All 10 NCERT Exercise Questions (Pages 321-322 of attached PDF)
+    const exercises = [
+      {
+        id: "13.1",
+        topic: "binding",
+        topicLabel: "Mass Defect & Binding Energy",
+        badgeColor: "bg-blue-100 text-blue-800",
+        title: "Binding Energy of Nitrogen Nucleus",
+        question: `Obtain the binding energy (in MeV) of a nitrogen nucleus (${nuc(14, 7, 'N')}), given <em>m</em>(${nuc(14, 7, 'N')}) = 14.00307 u.`,
+        given: [
+          `Atomic mass of ${nuc(14, 7, 'N')}, M = 14.00307 u`,
+          `Mass of ${nuc(1, 1, 'H')} atom, m<sub>H</sub> = 1.007825 u`,
+          `Mass of neutron, m<sub>n</sub> = 1.008665 u`,
+          `1 u = 931.5 MeV/c²`
+        ],
+        formula: `Δm = [Z·m<sub>H</sub> + (A − Z)m<sub>n</sub>] − M &nbsp;&nbsp;|&nbsp;&nbsp; E<sub>b</sub> = Δm × 931.5 MeV`,
+        steps: [
+          {
+            heading: "Step 1: Identify Nucleon Composition",
+            content: `For ${nuc(14, 7, 'N')}: Atomic number (number of protons) <strong>Z = 7</strong>, Mass number <strong>A = 14</strong>.<br>Number of neutrons <strong>N = A − Z = 14 − 7 = 7</strong>.`
+          },
+          {
+            heading: "Step 2: Calculate Total Mass of Constituents",
+            content: `Since the given mass 14.00307 u is the <em>atomic mass</em> (which includes 7 electrons), we use the mass of 7 hydrogen atoms (7 protons + 7 electrons) so that electron masses cancel out cleanly:<br>
+            Total mass = 7 × m<sub>H</sub> + 7 × m<sub>n</sub><br>
+            = 7(1.007825 u) + 7(1.008665 u)<br>
+            = 7.054775 u + 7.060655 u = <strong>14.11543 u</strong>`
+          },
+          {
+            heading: "Step 3: Compute Mass Defect (Δm)",
+            content: `Δm = 14.11543 u − 14.00307 u = <strong>0.11236 u</strong>`
+          },
+          {
+            heading: "Step 4: Convert Mass Defect to Binding Energy (E_b)",
+            content: `E<sub>b</sub> = 0.11236 × 931.5 MeV = <strong>104.663 MeV ≈ 104.7 MeV</strong>`
+          }
+        ],
+        finalAnswer: `Binding Energy of ${nuc(14, 7, 'N')} = 104.67 MeV (or 104.7 MeV)`,
+        examTip: "CBSE Board Tip: Never subtract 7m_e from 14.00307 u unless you also use bare proton mass m_p = 1.00727 u. Using Z·m_H directly with atomic mass saves time and prevents arithmetic errors!"
+      },
+      {
+        id: "13.2",
+        topic: "binding",
+        topicLabel: "Mass Defect & Binding Energy",
+        badgeColor: "bg-blue-100 text-blue-800",
+        title: "Binding Energy of Iron-56 and Bismuth-209",
+        question: `Obtain the binding energy of the nuclei ${nuc(56, 26, 'Fe')} and ${nuc(209, 83, 'Bi')} in units of MeV from the following data:<br>
+        <em>m</em>(${nuc(56, 26, 'Fe')}) = 55.934939 u, &nbsp;&nbsp; <em>m</em>(${nuc(209, 83, 'Bi')}) = 208.980388 u`,
+        given: [
+          `m(${nuc(56, 26, 'Fe')}) = 55.934939 u`,
+          `m(${nuc(209, 83, 'Bi')}) = 208.980388 u`,
+          `m<sub>H</sub> = 1.007825 u, &nbsp; m<sub>n</sub> = 1.008665 u`,
+          `1 u = 931.5 MeV/c²`
+        ],
+        formula: `Δm = [Z·m<sub>H</sub> + N·m<sub>n</sub>] − M &nbsp;&nbsp;|&nbsp;&nbsp; E<sub>b</sub> = Δm × 931.5 MeV`,
+        steps: [
+          {
+            heading: "Part (a) Step 1: Nucleons & Mass Defect for Iron (⁵⁶₂₆Fe)",
+            content: `For ${nuc(56, 26, 'Fe')}: Protons <strong>Z = 26</strong>, Neutrons <strong>N = 56 − 26 = 30</strong>.<br>
+            Mass of nucleons = 26(1.007825) + 30(1.008665) = 26.20345 + 30.25995 = <strong>56.46340 u</strong><br>
+            Δm(Fe) = 56.46340 u − 55.934939 u = <strong>0.528461 u</strong>`
+          },
+          {
+            heading: "Part (a) Step 2: Binding Energy of ⁵⁶₂₆Fe",
+            content: `E<sub>b</sub>(Fe) = 0.528461 × 931.5 MeV = <strong>492.26 MeV</strong><br>
+            <span class="text-slate-500 text-xs">(Note: Binding energy per nucleon E<sub>bn</sub> = 492.26 / 56 = 8.79 MeV — peak of the BE curve!)</span>`
+          },
+          {
+            heading: "Part (b) Step 3: Nucleons & Mass Defect for Bismuth (²⁰⁹₈₃Bi)",
+            content: `For ${nuc(209, 83, 'Bi')}: Protons <strong>Z = 83</strong>, Neutrons <strong>N = 209 − 83 = 126</strong>.<br>
+            Mass of nucleons = 83(1.007825) + 126(1.008665) = 83.649475 + 127.09179 = <strong>210.741265 u</strong><br>
+            Δm(Bi) = 210.741265 u − 208.980388 u = <strong>1.760877 u</strong>`
+          },
+          {
+            heading: "Part (b) Step 4: Binding Energy of ²⁰⁹₈₃Bi",
+            content: `E<sub>b</sub>(Bi) = 1.760877 × 931.5 MeV = <strong>1640.26 MeV</strong><br>
+            <span class="text-slate-500 text-xs">(Note: Binding energy per nucleon E<sub>bn</sub> = 1640.26 / 209 = 7.85 MeV, lower than ⁵⁶Fe.)</span>`
+          }
+        ],
+        finalAnswer: `E_b(⁵⁶Fe) = 492.26 MeV  |  E_b(²⁰⁹Bi) = 1640.26 MeV`,
+        examTip: "Notice that while total binding energy of ²⁰⁹Bi (1640.26 MeV) is larger than ⁵⁶Fe (492.26 MeV), the binding energy per nucleon of ⁵⁶Fe (8.79 MeV) is higher, making ⁵⁶Fe more stable."
+      },
+      {
+        id: "13.3",
+        topic: "binding",
+        topicLabel: "Mass Defect & Binding Energy",
+        badgeColor: "bg-blue-100 text-blue-800",
+        title: "Total Nuclear Energy to Dissociate a Copper Coin",
+        question: `A given coin has a mass of 3.0 g. Calculate the nuclear energy that would be required to separate all the neutrons and protons from each other. For simplicity assume that the coin is entirely made of ${nuc(63, 29, 'Cu')} atoms (of mass 62.92960 u).`,
+        given: [
+          `Mass of copper coin, m = 3.0 g`,
+          `Atomic mass of ${nuc(63, 29, 'Cu')}, M = 62.92960 u (Mass number A = 63)`,
+          `Avogadro number, N<sub>A</sub> = 6.023 × 10²³ mol⁻¹`,
+          `m<sub>H</sub> = 1.007825 u, &nbsp; m<sub>n</sub> = 1.008665 u`
+        ],
+        formula: `N<sub>atoms</sub> = (N<sub>A</sub> / A) × m &nbsp;&nbsp;|&nbsp;&nbsp; E<sub>total</sub> = N<sub>atoms</sub> × Δm × 931.5 MeV`,
+        steps: [
+          {
+            heading: "Step 1: Find Number of ⁶³₂₉Cu Atoms in the 3.0 g Coin",
+            content: `1 mole (63 g) of ${nuc(63, 29, 'Cu')} contains 6.023 × 10²³ atoms.<br>
+            N<sub>atoms</sub> = (6.023 × 10²³ / 63) × 3.0 = <strong>2.868 × 10²² atoms</strong>`
+          },
+          {
+            heading: "Step 2: Calculate Mass Defect (Δm) of One ⁶³₂₉Cu Atom",
+            content: `For ${nuc(63, 29, 'Cu')}: Protons <strong>Z = 29</strong>, Neutrons <strong>N = 63 − 29 = 34</strong>.<br>
+            Mass of constituents = 29(1.007825) + 34(1.008665) = 29.226925 + 34.29461 = <strong>63.521535 u</strong><br>
+            Δm = 63.521535 u − 62.92960 u = <strong>0.591935 u</strong>`
+          },
+          {
+            heading: "Step 3: Binding Energy per ⁶³₂₉Cu Nucleus",
+            content: `E<sub>b</sub> (per nucleus) = 0.591935 × 931.5 MeV = <strong>551.387 MeV</strong>`
+          },
+          {
+            heading: "Step 4: Total Nuclear Energy Required for All Atoms",
+            content: `E<sub>total</sub> = (2.8681 × 10²²) × 551.387 MeV = <strong>1.581 × 10²⁵ MeV</strong><br>
+            In Joules: E<sub>total</sub> = 1.581 × 10²⁵ × 1.6 × 10⁻¹³ J = <strong>2.53 × 10¹² J</strong>`
+          }
+        ],
+        finalAnswer: `Total Energy Required = 1.58 × 10²⁵ MeV (or 2.53 × 10¹² J)`,
+        examTip: "Always express the final answer in MeV (standard in nuclear physics), and optionally convert to Joules using 1 MeV = 1.6 × 10⁻¹³ J for full credit."
+      },
+      {
+        id: "13.4",
+        topic: "size",
+        topicLabel: "Nuclear Size & Radius",
+        badgeColor: "bg-emerald-100 text-emerald-800",
+        title: "Ratio of Nuclear Radii of Gold and Silver Isotopes",
+        question: `Obtain approximately the ratio of the nuclear radii of the gold isotope ${nuc(197, 79, 'Au')} and the silver isotope ${nuc(107, 47, 'Ag')}.`,
+        given: [
+          `Mass number of Gold (${nuc(197, 79, 'Au')}), A₁ = 197`,
+          `Mass number of Silver (${nuc(107, 47, 'Ag')}), A₂ = 107`
+        ],
+        formula: `R = R₀ A<sup>1/3</sup> &nbsp;⇒&nbsp; R₁ / R₂ = (A₁ / A₂)<sup>1/3</sup>`,
+        steps: [
+          {
+            heading: "Step 1: Apply the Empirical Nuclear Radius Relation",
+            content: `The radius R of a nucleus is proportional to the cube root of its mass number A:<br>
+            R<sub>Au</sub> = R₀ (197)<sup>1/3</sup> &nbsp;&nbsp;and&nbsp;&nbsp; R<sub>Ag</sub> = R₀ (107)<sup>1/3</sup>`
+          },
+          {
+            heading: "Step 2: Take the Ratio of the Two Radii",
+            content: `R<sub>Au</sub> / R<sub>Ag</sub> = (197 / 107)<sup>1/3</sup> = (1.8411)<sup>1/3</sup>`
+          },
+          {
+            heading: "Step 3: Evaluate the Cube Root",
+            content: `Since 1.226³ ≈ 1.842, we obtain:<br>
+            R<sub>Au</sub> / R<sub>Ag</sub> ≈ <strong>1.23</strong>`
+          }
+        ],
+        finalAnswer: `Ratio of Nuclear Radii (R_Au : R_Ag) ≈ 1.23 : 1`,
+        examTip: "Notice that atomic numbers Z (79 and 47) are distractors here! Nuclear radius depends strictly on mass number A (total nucleons)."
+      },
+      {
+        id: "13.5",
+        topic: "qvalue",
+        topicLabel: "Nuclear Reactions & Q-Value",
+        badgeColor: "bg-purple-100 text-purple-800",
+        title: "Q-Value & Energetic Nature of Nuclear Reactions",
+        question: `The <em>Q</em> value of a nuclear reaction <em>A + b → C + d</em> is defined by <em>Q = [m<sub>A</sub> + m<sub>b</sub> − m<sub>C</sub> − m<sub>d</sub>]c²</em> where the masses refer to the respective nuclei. Determine from the given data the <em>Q</em>-value of the following reactions and state whether the reactions are exothermic or endothermic.<br>
+        (i) ${nuc(1, 1, 'H')} + ${nuc(3, 1, 'H')} → ${nuc(2, 1, 'H')} + ${nuc(2, 1, 'H')}<br>
+        (ii) ${nuc(12, 6, 'C')} + ${nuc(12, 6, 'C')} → ${nuc(20, 10, 'Ne')} + ${nuc(4, 2, 'He')}`,
+        given: [
+          `m(${nuc(1, 1, 'H')}) = 1.007825 u, &nbsp; m(${nuc(2, 1, 'H')}) = 2.014102 u, &nbsp; m(${nuc(3, 1, 'H')}) = 3.016049 u`,
+          `m(${nuc(12, 6, 'C')}) = 12.000000 u, &nbsp; m(${nuc(20, 10, 'Ne')}) = 19.992439 u, &nbsp; m(${nuc(4, 2, 'He')}) = 4.002603 u`,
+          `1 u = 931.5 MeV/c²`
+        ],
+        formula: `Q = [∑m<sub>reactants</sub> − ∑m<sub>products</sub>] × 931.5 MeV`,
+        steps: [
+          {
+            heading: "Reaction (i): Mass Difference Calculation",
+            content: `Reactants: m(${nuc(1, 1, 'H')}) + m(${nuc(3, 1, 'H')}) = 1.007825 + 3.016049 = <strong>4.023874 u</strong><br>
+            Products: 2 × m(${nuc(2, 1, 'H')}) = 2 × 2.014102 = <strong>4.028204 u</strong><br>
+            Δm = 4.023874 u − 4.028204 u = <strong>−0.00433 u</strong>`
+          },
+          {
+            heading: "Reaction (i): Q-Value & Classification",
+            content: `Q₁ = −0.00433 × 931.5 MeV = <strong>−4.033 MeV</strong><br>
+            Since <strong>Q₁ < 0</strong> (negative), energy is absorbed; hence reaction (i) is <strong>Endothermic</strong>.`
+          },
+          {
+            heading: "Reaction (ii): Mass Difference Calculation",
+            content: `Reactants: 2 × m(${nuc(12, 6, 'C')}) = 2 × 12.000000 = <strong>24.000000 u</strong><br>
+            Products: m(${nuc(20, 10, 'Ne')}) + m(${nuc(4, 2, 'He')}) = 19.992439 + 4.002603 = <strong>23.995042 u</strong><br>
+            Δm = 24.000000 u − 23.995042 u = <strong>+0.004958 u</strong>`
+          },
+          {
+            heading: "Reaction (ii): Q-Value & Classification",
+            content: `Q₂ = +0.004958 × 931.5 MeV = <strong>+4.618 MeV ≈ +4.62 MeV</strong><br>
+            Since <strong>Q₂ > 0</strong> (positive), energy is released; hence reaction (ii) is <strong>Exothermic</strong>.`
+          }
+        ],
+        finalAnswer: `(i) Q = −4.033 MeV (Endothermic)  |  (ii) Q = +4.62 MeV (Exothermic)`,
+        examTip: "Remember: Q = (Initial Mass − Final Mass)c². Even though the formula defines nuclear masses, atomic masses give the exact same Δm because total Z is conserved on both sides!"
+      },
+      {
+        id: "13.6",
+        topic: "qvalue",
+        topicLabel: "Nuclear Fission & Q-Value",
+        badgeColor: "bg-purple-100 text-purple-800",
+        title: "Feasibility of Fission of Iron-56 into Aluminium-28",
+        question: `Suppose, we think of fission of a ${nuc(56, 26, 'Fe')} nucleus into two equal fragments, ${nuc(28, 13, 'Al')}. Is the fission energetically possible? Argue by working out <em>Q</em> of the process. Given <em>m</em>(${nuc(56, 26, 'Fe')}) = 55.93494 u and <em>m</em>(${nuc(28, 13, 'Al')}) = 27.98191 u.`,
+        given: [
+          `Hypothetical reaction: ${nuc(56, 26, 'Fe')} → 2 ${nuc(28, 13, 'Al')}`,
+          `m(${nuc(56, 26, 'Fe')}) = 55.93494 u`,
+          `m(${nuc(28, 13, 'Al')}) = 27.98191 u`
+        ],
+        formula: `Q = [m(${nuc(56, 26, 'Fe')}) − 2·m(${nuc(28, 13, 'Al')})] × 931.5 MeV`,
+        steps: [
+          {
+            heading: "Step 1: Compare Initial Mass with Total Final Mass",
+            content: `Initial mass = m(${nuc(56, 26, 'Fe')}) = <strong>55.93494 u</strong><br>
+            Final mass of two fragments = 2 × 27.98191 u = <strong>55.96382 u</strong>`
+          },
+          {
+            heading: "Step 2: Calculate Mass Defect (Δm)",
+            content: `Δm = 55.93494 u − 55.96382 u = <strong>−0.02888 u</strong>`
+          },
+          {
+            heading: "Step 3: Compute Q-Value & Physical Conclusion",
+            content: `Q = −0.02888 × 931.5 MeV = <strong>−26.90 MeV</strong><br>
+            Because <strong>Q is negative (−26.90 MeV)</strong>, 26.90 MeV of external energy would have to be supplied to split ${nuc(56, 26, 'Fe')}. Thus, spontaneous fission of ${nuc(56, 26, 'Fe')} is <strong>not energetically possible</strong>.`
+          }
+        ],
+        finalAnswer: `Q = −26.90 MeV ⇒ Fission is NOT energetically possible.`,
+        examTip: "Conceptual link: ⁵⁶Fe sits at the maximum of the binding energy per nucleon curve (8.79 MeV). Splitting it moves fragments down the curve to lower stability, requiring energy input!"
+      },
+      {
+        id: "13.7",
+        topic: "energy",
+        topicLabel: "Nuclear Fission Energy",
+        badgeColor: "bg-amber-100 text-amber-800",
+        title: "Energy Released from Fission of 1 kg Plutonium-239",
+        question: `The fission properties of ${nuc(239, 94, 'Pu')} are very similar to those of ${nuc(235, 92, 'U')}. The average energy released per fission is 180 MeV. How much energy, in MeV, is released if all the atoms in 1 kg of pure ${nuc(239, 94, 'Pu')} undergo fission?`,
+        given: [
+          `Mass of ${nuc(239, 94, 'Pu')}, m = 1 kg = 1000 g`,
+          `Molar mass of ${nuc(239, 94, 'Pu')} = 239 g/mol`,
+          `Average energy per fission = 180 MeV`,
+          `N<sub>A</sub> = 6.023 × 10²³ mol⁻¹`
+        ],
+        formula: `N = (N<sub>A</sub> / 239) × 1000 &nbsp;&nbsp;|&nbsp;&nbsp; E<sub>total</sub> = N × 180 MeV`,
+        steps: [
+          {
+            heading: "Step 1: Calculate Total Number of ²³⁹₉₄Pu Atoms in 1 kg",
+            content: `239 g of ${nuc(239, 94, 'Pu')} contains 6.023 × 10²³ atoms.<br>
+            In 1000 g (1 kg):<br>
+            N = (6.023 × 10²³ / 239) × 1000 = <strong>2.52 × 10²⁴ atoms</strong>`
+          },
+          {
+            heading: "Step 2: Multiply by Energy Released per Fission",
+            content: `Each fission releases 180 MeV.<br>
+            E<sub>total</sub> = (2.52008 × 10²⁴) × 180 MeV = <strong>4.536 × 10²⁶ MeV</strong>`
+          },
+          {
+            heading: "Step 3: Optional Conversion to Joules",
+            content: `E<sub>total</sub> = 4.536 × 10²⁶ × 1.6 × 10⁻¹³ J = <strong>7.26 × 10¹³ J</strong>`
+          }
+        ],
+        finalAnswer: `Total Energy Released = 4.54 × 10²⁶ MeV`,
+        examTip: "Read the unit requested carefully: The question explicitly asks 'How much energy, in MeV, is released...'. Always highlight the answer in MeV first!"
+      },
+      {
+        id: "13.8",
+        topic: "energy",
+        topicLabel: "Nuclear Fusion Power",
+        badgeColor: "bg-amber-100 text-amber-800",
+        title: "Duration a 100 W Lamp Glows Using 2.0 kg Deuterium Fusion",
+        question: `How long can an electric lamp of 100 W be kept glowing by fusion of 2.0 kg of deuterium? Take the fusion reaction as:<br>
+        ${nuc(2, 1, 'H')} + ${nuc(2, 1, 'H')} → ${nuc(3, 2, 'He')} + <em>n</em> + 3.27 MeV`,
+        given: [
+          `Mass of deuterium (${nuc(2, 1, 'H')}), m = 2.0 kg = 2000 g`,
+          `Energy released per fusion of 2 deuterons = 3.27 MeV`,
+          `Power of lamp, P = 100 W = 100 J/s`,
+          `1 MeV = 1.6 × 10⁻¹³ J, &nbsp; 1 year = 3.154 × 10⁷ s`
+        ],
+        formula: `E<sub>total</sub> = (N / 2) × 3.27 MeV &nbsp;&nbsp;|&nbsp;&nbsp; t = E<sub>total</sub> / P`,
+        steps: [
+          {
+            heading: "Step 1: Find Total Number of Deuterium Nuclei in 2.0 kg",
+            content: `Molar mass of ${nuc(2, 1, 'H')} = 2 g/mol.<br>
+            N = (6.023 × 10²³ / 2) × 2000 = <strong>6.023 × 10²⁶ nuclei</strong>`
+          },
+          {
+            heading: "Step 2: Calculate Total Fusion Energy Released",
+            content: `Since <strong>two</strong> deuterons fuse to release 3.27 MeV, energy per deuteron = 3.27 / 2 = 1.635 MeV.<br>
+            E<sub>total</sub> = (6.023 × 10²⁶) × 1.635 MeV = <strong>9.8476 × 10²⁶ MeV</strong>`
+          },
+          {
+            heading: "Step 3: Convert Energy from MeV to Joules",
+            content: `E<sub>total</sub> = 9.8476 × 10²⁶ × 1.6 × 10⁻¹³ J = <strong>1.5756 × 10¹⁴ J</strong>`
+          },
+          {
+            heading: "Step 4: Compute Time (t) in Seconds and Years",
+            content: `t = E<sub>total</sub> / P = (1.5756 × 10¹⁴ J) / (100 J/s) = <strong>1.5756 × 10¹² s</strong><br>
+            In years: t = (1.5756 × 10¹²) / (3.154 × 10⁷ s/yr) ≈ <strong>4.995 × 10⁴ years ≈ 5.0 × 10⁴ years</strong>`
+          }
+        ],
+        finalAnswer: `Time = 1.58 × 10¹² s ≈ 5.0 × 10⁴ years (50,000 years)`,
+        examTip: "Most common student mistake: Forgetting to divide N by 2! Two deuterium nuclei participate in one fusion event releasing 3.27 MeV."
+      },
+      {
+        id: "13.9",
+        topic: "energy",
+        topicLabel: "Coulomb Potential Barrier",
+        badgeColor: "bg-amber-100 text-amber-800",
+        title: "Height of Coulomb Potential Barrier for Deuteron Collision",
+        question: `Calculate the height of the potential barrier for a head-on collision of two deuterons. (Hint: The height of the potential barrier is given by the Coulomb repulsion between the two deuterons when they just touch each other. Assume that they can be taken as hard spheres of radius 2.0 fm.)`,
+        given: [
+          `Charge on each deuteron (${nuc(2, 1, 'H')}), q₁ = q₂ = +e = 1.6 × 10⁻¹⁹ C`,
+          `Radius of each deuteron, r = 2.0 fm = 2.0 × 10⁻¹⁵ m`,
+          `1 / (4πε₀) = 9 × 10⁹ N·m²/C²`
+        ],
+        formula: `U = (1 / 4πε₀) · (q₁ q₂ / d) &nbsp;&nbsp;where&nbsp;&nbsp; d = r + r = 2r`,
+        steps: [
+          {
+            heading: "Step 1: Determine Center-to-Center Separation at Contact (d)",
+            content: `When two hard spheres of radius 2.0 fm just touch each other, the distance between their centers is:<br>
+            d = r + r = 2.0 fm + 2.0 fm = 4.0 fm = <strong>4.0 × 10⁻¹⁵ m</strong>`
+          },
+          {
+            heading: "Step 2: Calculate Electrostatic Potential Energy (U) in Joules",
+            content: `U = [9 × 10⁹ × (1.6 × 10⁻¹⁹)²] / (4.0 × 10⁻¹⁵)<br>
+            U = (9 × 10⁹ × 2.56 × 10⁻³⁸) / (4.0 × 10⁻¹⁵)<br>
+            U = (2.304 × 10⁻²⁸) / (4.0 × 10⁻¹⁵) = <strong>5.76 × 10⁻¹⁴ J</strong>`
+          },
+          {
+            heading: "Step 3: Express Potential Barrier in keV",
+            content: `Since 1 keV = 1.6 × 10⁻¹⁶ J:<br>
+            U = (5.76 × 10⁻¹⁴) / (1.6 × 10⁻¹⁶) = <strong>360 keV</strong>`
+          }
+        ],
+        finalAnswer: `Height of Potential Barrier = 5.76 × 10⁻¹⁴ J = 360 keV`,
+        examTip: "Watch out! Use d = 2r = 4.0 fm (center-to-center distance), not r = 2.0 fm. Also note how close 360 keV is to the ~400 keV proton-proton barrier discussed in Section 13.7.2!"
+      },
+      {
+        id: "13.10",
+        topic: "size",
+        topicLabel: "Nuclear Matter Density",
+        badgeColor: "bg-emerald-100 text-emerald-800",
+        title: "Proof that Nuclear Matter Density is Independent of Mass Number A",
+        question: `From the relation <em>R = R₀ A<sup>1/3</sup></em>, where <em>R₀</em> is a constant and <em>A</em> is the mass number of a nucleus, show that the nuclear matter density is nearly constant (i.e. independent of <em>A</em>).`,
+        given: [
+          `Nuclear radius, R = R₀ A<sup>1/3</sup> where R₀ ≈ 1.2 × 10⁻¹⁵ m`,
+          `Average mass of one nucleon, m ≈ 1.66 × 10⁻²⁷ kg`
+        ],
+        formula: `ρ = Mass of Nucleus (M) / Volume of Nucleus (V)`,
+        steps: [
+          {
+            heading: "Step 1: Express the Mass of the Nucleus (M)",
+            content: `A nucleus with mass number A contains A nucleons (protons + neutrons). Taking average nucleon mass as <em>m</em>:<br>
+            <strong>M = A · m</strong>`
+          },
+          {
+            heading: "Step 2: Express the Volume of the Spherical Nucleus (V)",
+            content: `Assuming the nucleus to be a sphere of radius R = R₀ A<sup>1/3</sup>:<br>
+            V = (4/3) π R³ = (4/3) π (R₀ A<sup>1/3</sup>)³ = <strong>(4/3) π R₀³ A</strong>`
+          },
+          {
+            heading: "Step 3: Compute Nuclear Density (ρ) and Cancel A",
+            content: `ρ = M / V = (A · m) / [(4/3) π R₀³ A]<br>
+            Cancelling <strong>A</strong> from numerator and denominator:<br>
+            <strong>ρ = 3m / (4π R₀³)</strong>`
+          },
+          {
+            heading: "Step 4: Conclusion & Numerical Value",
+            content: `Since <em>m</em>, <em>π</em>, and <em>R₀</em> are universal constants, <strong>ρ is completely independent of mass number A</strong>.<br>
+            Numerically: ρ = [3 × 1.66 × 10⁻²⁷] / [4 × 3.1416 × (1.2 × 10⁻¹⁵)³] ≈ <strong>2.29 × 10¹⁷ kg m⁻³</strong>`
+          }
+        ],
+        finalAnswer: `ρ = 3m / (4πR₀³) ≈ 2.3 × 10¹⁷ kg m⁻³ (Independent of A)`,
+        examTip: "Frequent 2-mark CBSE derivation! Clearly show the cancellation of A and state the numerical order of magnitude (~10¹⁷ kg/m³) at the end."
+      }
+    ];
+
+    // Quiz Questions derived directly from the 10 NCERT Exercises
+    const quizData = [
+      {
+        q: "1. What is the approximate binding energy of a Nitrogen-14 nucleus (¹⁴₇N) in Exercise 13.1?",
+        options: ["52.3 MeV", "104.7 MeV", "209.4 MeV", "14.0 MeV"],
+        ans: 1
+      },
+      {
+        q: "2. Which nucleus among ⁵⁶₂₆Fe and ²⁰⁹₈₃Bi has a higher binding energy per nucleon?",
+        options: ["²⁰⁹₈₃Bi (7.85 MeV)", "⁵⁶₂₆Fe (8.79 MeV)", "Both are identical", "Neither is bound"],
+        ans: 1
+      },
+      {
+        q: "3. Approximately how much nuclear energy is needed to dissociate all atoms in a 3.0 g ⁶³Cu coin?",
+        options: ["1.58 × 10²⁵ MeV", "551.4 MeV", "3.0 × 10¹⁰ MeV", "9.0 × 10¹³ MeV"],
+        ans: 0
+      },
+      {
+        q: "4. The ratio of nuclear radii of ¹⁹⁷Au to ¹⁰⁷Ag is approximately:",
+        options: ["197 : 107", "1.84 : 1", "1.23 : 1", "1.50 : 1"],
+        ans: 2
+      },
+      {
+        q: "5. In Exercise 13.5(i), ¹H + ³H → ²H + ²H has Q = −4.033 MeV. This reaction is:",
+        options: ["Exothermic", "Endothermic", "Isothermal", "Spontaneous fission"],
+        ans: 1
+      },
+      {
+        q: "6. Is the hypothetical fission of ⁵⁶₂₆Fe into two equal ²⁸₁₃Al nuclei energetically possible?",
+        options: ["Yes, Q = +26.90 MeV", "No, Q = −26.90 MeV", "Yes, Q = 0 MeV", "Only at room temperature"],
+        ans: 1
+      },
+      {
+        q: "7. How much energy is released when 1 kg of pure ²³⁹Pu undergoes complete fission (180 MeV/fission)?",
+        options: ["1.80 × 10²⁰ MeV", "4.54 × 10²⁶ MeV", "2.52 × 10²⁴ MeV", "9.31 × 10²⁵ MeV"],
+        ans: 1
+      },
+      {
+        q: "8. A 100 W electric lamp powered by fusion of 2.0 kg deuterium (3.27 MeV per two deuterons) glows for:",
+        options: ["500 years", "5,000 years", "50,000 years", "5 million years"],
+        ans: 2
+      },
+      {
+        q: "9. What is the Coulomb potential barrier height for two touching deuterons (each of radius 2.0 fm)?",
+        options: ["180 keV", "360 keV", "720 keV", "400 MeV"],
+        ans: 1
+      },
+      {
+        q: "10. From R = R₀A¹/³, nuclear matter density ρ scales with mass number A as:",
+        options: ["ρ ∝ A", "ρ ∝ A¹/³", "ρ ∝ A⁰ (independent of A)", "ρ ∝ A⁻¹"],
+        ans: 2
+      }
+    ];
+
+    // State Management
+    let currentTopic = 'all';
+    let revealedSteps = {}; // { "13.1": 0..4 }
+    let completedQuestions = new Set();
+    let quizAnswers = {};
+
+    // Initialize state with Step 1 visible by default for smooth classroom flow
+    exercises.forEach(ex => {
+      revealedSteps[ex.id] = 0;
+    });
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 2600);
+    }
+
+    function toggleConstants() {
+      const panel = document.getElementById('constants-panel');
+      const chev = document.getElementById('const-chevron');
+      panel.classList.toggle('hidden');
+      chev.classList.toggle('rotate-180');
+    }
+
+    function switchView(view) {
+      ['ebook', 'visuals', 'quiz'].forEach(v => {
+        document.getElementById(`view-${v}`).classList.toggle('hidden', v !== view);
+        const tab = document.getElementById(`tab-${v}`);
+        if (v === view) {
+          tab.className = "px-4 py-2 rounded-xl text-sm font-bold bg-indigo-600 text-white shadow-sm transition";
+        } else {
+          tab.className = "px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition";
+        }
+      });
+    }
+
+    function filterTopic(topic) {
+      currentTopic = topic;
+      document.querySelectorAll('.topic-btn').forEach(btn => {
+        if (btn.dataset.topic === topic) {
+          btn.className = "topic-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-900 text-white transition";
+        } else {
+          btn.className = "topic-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition";
+        }
+      });
+      renderQuestions();
+    }
+
+    function revealNextStep(id) {
+      const ex = exercises.find(e => e.id === id);
+      if (revealedSteps[id] < ex.steps.length) {
+        revealedSteps[id]++;
+        if (revealedSteps[id] === ex.steps.length) {
+          completedQuestions.add(id);
+          updateProgress();
+        }
+        renderQuestions();
+      }
+    }
+
+    function revealFullQuestion(id) {
+      const ex = exercises.find(e => e.id === id);
+      revealedSteps[id] = ex.steps.length;
+      completedQuestions.add(id);
+      updateProgress();
+      renderQuestions();
+    }
+
+    function resetQuestion(id) {
+      revealedSteps[id] = 0;
+      completedQuestions.delete(id);
+      updateProgress();
+      renderQuestions();
+    }
+
+    function toggleComplete(id) {
+      if (completedQuestions.has(id)) {
+        completedQuestions.delete(id);
+      } else {
+        completedQuestions.add(id);
+      }
+      updateProgress();
+      renderQuestions();
+    }
+
+    function revealAllSolutions() {
+      exercises.forEach(ex => {
+        revealedSteps[ex.id] = ex.steps.length;
+        completedQuestions.add(ex.id);
+      });
+      updateProgress();
+      renderQuestions();
+      showToast("All 10 step-by-step NCERT solutions expanded!");
+    }
+
+    function updateProgress() {
+      const count = completedQuestions.size;
+      document.getElementById('progress-text').textContent = `${count} / 10 Solved`;
+      document.getElementById('progress-bar').style.width = `${(count / 10) * 100}%`;
+    }
+
+    function copySolution(id) {
+      const ex = exercises.find(e => e.id === id);
+      const plainText = `NCERT Class 12 Physics - Exercise ${ex.id}: ${ex.title}\nFinal Answer: ${ex.finalAnswer}\n(Module by Hrishikesh M, PGT Physics)`;
+      const textarea = document.createElement('textarea');
+      textarea.value = plainText;
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast(`Copied Exercise ${ex.id} summary to clipboard!`);
+      } catch (err) {
+        showToast("Unable to copy text.");
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function renderJumpPills() {
+      const container = document.getElementById('jump-pills');
+      container.innerHTML = exercises.map(ex => {
+        const done = completedQuestions.has(ex.id);
+        return `<a href="#q-${ex.id}" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition shrink-0 ${
+          done ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-white border-slate-200 text-slate-700 hover:border-indigo-400'
+        }">${ex.id} ${done ? '✓' : ''}</a>`;
+      }).join('');
+    }
+
+    function renderQuestions() {
+      renderJumpPills();
+      const search = (document.getElementById('search-input').value || '').toLowerCase();
+      const container = document.getElementById('questions-container');
+
+      const filtered = exercises.filter(ex => {
+        const matchesTopic = currentTopic === 'all' || ex.topic === currentTopic;
+        const matchesSearch = !search ||
+          ex.id.toLowerCase().includes(search) ||
+          ex.title.toLowerCase().includes(search) ||
+          ex.question.toLowerCase().includes(search) ||
+          ex.finalAnswer.toLowerCase().includes(search);
+        return matchesTopic && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="glass-card rounded-2xl p-8 text-center text-slate-500 text-sm">No matching NCERT exercise questions found. Try clearing your filter or search term.</div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(ex => {
+        const currentStepCount = revealedSteps[ex.id] || 0;
+        const totalSteps = ex.steps.length;
+        const isFullyRevealed = currentStepCount === totalSteps;
+        const isDone = completedQuestions.has(ex.id);
+
+        return `
+          <article id="q-${ex.id}" class="glass-card rounded-2xl shadow-sm overflow-hidden transition-all border-l-4 ${isDone ? 'border-l-emerald-500' : 'border-l-indigo-600'}">
+            <!-- Question Header -->
+            <div class="p-5 sm:p-6 bg-white/70">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="px-3 py-1 rounded-xl bg-indigo-600 text-white text-xs font-extrabold tracking-wide">Exercise ${ex.id}</span>
+                  <span class="px-2.5 py-1 rounded-xl text-xs font-bold ${ex.badgeColor}">${ex.topicLabel}</span>
+                </div>
+                <div class="flex items-center gap-2 no-print">
+                  <button onclick="copySolution('${ex.id}')" class="px-2.5 py-1 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100 border border-slate-200 transition" title="Copy Summary">
+                    Copy
+                  </button>
+                  <button onclick="toggleComplete('${ex.id}')" class="px-3 py-1 rounded-lg text-xs font-bold border transition ${
+                    isDone ? 'bg-emerald-100 text-emerald-800 border-emerald-300' : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'
+                  }">
+                    ${isDone ? '✓ Covered in Class' : 'Mark Covered'}
+                  </button>
+                </div>
+              </div>
+
+              <h2 class="text-base sm:text-lg font-extrabold text-slate-900 mb-2">${ex.title}</h2>
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/90 text-sm sm:text-base text-slate-800 leading-relaxed font-medium">
+                ${ex.question}
+              </div>
+
+              <!-- Given Data & Formula Box -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
+                <div class="p-3.5 rounded-xl bg-blue-50/70 border border-blue-200/80">
+                  <div class="text-xs font-extrabold uppercase tracking-wider text-blue-800 mb-1.5">📌 Given Data</div>
+                  <ul class="space-y-1 text-xs sm:text-sm text-slate-700 font-mono">
+                    ${ex.given.map(g => `<li>• ${g}</li>`).join('')}
+                  </ul>
+                </div>
+                <div class="p-3.5 rounded-xl bg-purple-50/70 border border-purple-200/80 flex flex-col justify-center">
+                  <div class="text-xs font-extrabold uppercase tracking-wider text-purple-800 mb-1.5">📐 Key Formula</div>
+                  <div class="text-xs sm:text-sm font-mono font-bold text-purple-950 bg-white/80 px-3 py-2 rounded-lg border border-purple-200">
+                    ${ex.formula}
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive Step-by-Step Controls -->
+              <div class="flex flex-wrap items-center justify-between gap-3 mt-5 pt-4 border-t border-slate-200/80 no-print">
+                <div class="flex flex-wrap items-center gap-2">
+                  ${!isFullyRevealed ? `
+                    <button onclick="revealNextStep('${ex.id}')" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-bold shadow-sm transition flex items-center gap-1.5">
+                      <span>${currentStepCount === 0 ? '▶ Start Step-by-Step Solution' : `▶ Reveal Step ${currentStepCount + 1} of ${totalSteps}`}</span>
+                    </button>
+                    <button onclick="revealFullQuestion('${ex.id}')" class="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs sm:text-sm font-semibold transition">
+                      Show All Steps
+                    </button>
+                  ` : `
+                    <span class="px-3 py-1.5 rounded-xl bg-emerald-100 text-emerald-800 text-xs font-bold">✓ All ${totalSteps} Steps Revealed</span>
+                    <button onclick="resetQuestion('${ex.id}')" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition">
+                      Reset Steps
+                    </button>
+                  `}
+                </div>
+                <div class="text-xs font-semibold text-slate-500">
+                  Progress: ${currentStepCount} / ${totalSteps} Steps
+                </div>
+              </div>
+            </div>
+
+            <!-- Revealed Step-by-Step Solution Drawer -->
+            ${currentStepCount > 0 ? `
+              <div class="p-5 sm:p-6 bg-gradient-to-b from-slate-50 to-white border-t border-slate-200 space-y-3.5">
+                ${ex.steps.slice(0, currentStepCount).map((step, idx) => `
+                  <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-xs step-fade-in">
+                    <div class="flex items-center gap-2 mb-1.5">
+                      <span class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-700 font-bold text-xs flex items-center justify-center shrink-0">${idx + 1}</span>
+                      <h4 class="text-xs sm:text-sm font-bold text-indigo-900">${step.heading}</h4>
+                    </div>
+                    <div class="pl-8 text-xs sm:text-sm text-slate-700 leading-relaxed font-mono">
+                      ${step.content}
+                    </div>
+                  </div>
+                `).join('')}
+
+                ${isFullyRevealed ? `
+                  <!-- Final Answer Banner -->
+                  <div class="p-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md step-fade-in">
+                    <div class="text-xs uppercase tracking-wider font-bold text-emerald-100">Final NCERT Answer</div>
+                    <div class="text-sm sm:text-base font-extrabold font-mono mt-0.5">${ex.finalAnswer}</div>
+                  </div>
+                  <!-- PGT Physics Board Exam Tip -->
+                  <div class="p-3.5 rounded-xl bg-amber-50 border border-amber-300 text-xs sm:text-sm text-amber-950 step-fade-in">
+                    <strong>💡 PGT Physics Insight:</strong> ${ex.examTip}
+                  </div>
+                ` : ''}
+              </div>
+            ` : ''}
+          </article>
+        `;
+      }).join('');
+    }
+
+    // Interactive Binding Energy Curve Inspector
+    const nucleusDetails = {
+      '2H': "<strong>Selected: ²H (Deuteron — Q13.8 & Q13.9)</strong> — Total Binding Energy = <span class='font-mono font-bold text-indigo-700'>2.22 MeV</span> | E<sub>bn</sub> = <span class='font-mono font-bold text-rose-600'>1.11 MeV</span>. Very lightly bound; fusing two deuterons releases 3.27 MeV!",
+      '4He': "<strong>Selected: ⁴He (Alpha Particle)</strong> — Total Binding Energy = <span class='font-mono font-bold text-indigo-700'>28.3 MeV</span> | E<sub>bn</sub> = <span class='font-mono font-bold text-emerald-700'>7.07 MeV</span>. Sharp local peak due to doubly-magic nuclear shell stability.",
+      '14N': "<strong>Selected: ¹⁴N (Nitrogen-14 — Q13.1)</strong> — Total Binding Energy = <span class='font-mono font-bold text-indigo-700'>104.67 MeV</span> | E<sub>bn</sub> = <span class='font-mono font-bold text-emerald-700'>7.48 MeV</span>.",
+      '56Fe': "<strong>Selected: ⁵⁶Fe (Iron-56 — Q13.2 & Q13.6)</strong> — Total Binding Energy = <span class='font-mono font-bold text-indigo-700'>492.26 MeV</span> | E<sub>bn</sub> = <span class='font-mono font-bold text-emerald-700'>8.79 MeV</span>. Located near the peak of stability!",
+      '209Bi': "<strong>Selected: ²⁰⁹Bi (Bismuth-209 — Q13.2)</strong> — Total Binding Energy = <span class='font-mono font-bold text-indigo-700'>1640.26 MeV</span> | E<sub>bn</sub> = <span class='font-mono font-bold text-purple-700'>7.85 MeV</span>.",
+      '239Pu': "<strong>Selected: ²³⁹Pu (Plutonium-239 — Q13.7)</strong> — E<sub>bn</sub> ≈ <span class='font-mono font-bold text-amber-700'>7.56 MeV</span>. Splitting into middle-mass fragments releases ~180 MeV per fission!"
+    };
+
+    function selectNucleus(key) {
+      document.getElementById('nucleus-inspector').innerHTML = nucleusDetails[key];
+    }
+
+    // Interactive Coulomb Barrier Simulator (Q13.9)
+    function updateBarrierSim(distFm) {
+      const d = parseFloat(distFm);
+      // U(keV) = (9e9 * (1.6e-19)^2) / (d * 1e-15 * 1.6e-16) = 1440 / d
+      const energyKeV = (1440 / d).toFixed(1);
+      document.getElementById('sim-dist').textContent = `${d.toFixed(1)} fm`;
+      document.getElementById('sim-energy').textContent = `${energyKeV} keV`;
+
+      // Visual separation in pixels (touching at d = 4.0 fm -> +/- 24px since w-12 = 48px)
+      const offsetPx = 24 + (d - 4) * 5.5;
+      document.getElementById('deuteron-left').style.transform = `translateX(-${offsetPx}px)`;
+      document.getElementById('deuteron-right').style.transform = `translateX(${offsetPx}px)`;
+
+      const statusEl = document.getElementById('sim-status');
+      if (d <= 4.0) {
+        statusEl.textContent = "💥 CONTACT REACHED (d = 4.0 fm)! Peak Coulomb Barrier = 360.0 keV!";
+        statusEl.className = "text-center text-xs font-extrabold text-amber-300 mt-1";
+      } else {
+        statusEl.textContent = "Approaching: Electrostatic repulsion increasing inversely with distance (U ∝ 1/d)";
+        statusEl.className = "text-center text-xs font-semibold text-cyan-300 mt-1";
+      }
+    }
+
+    // Classroom Quiz Renderer
+    function renderQuiz() {
+      const container = document.getElementById('quiz-container');
+      container.innerHTML = quizData.map((item, qIdx) => {
+        const chosen = quizAnswers[qIdx];
+        return `
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
+            <div class="text-sm font-bold text-slate-900">${item.q}</div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              ${item.options.map((opt, oIdx) => {
+                let btnStyle = "bg-white border-slate-300 text-slate-700 hover:border-indigo-500";
+                if (chosen !== undefined) {
+                  if (oIdx === item.ans) {
+                    btnStyle = "bg-emerald-600 border-emerald-600 text-white font-bold";
+                  } else if (oIdx === chosen && chosen !== item.ans) {
+                    btnStyle = "bg-rose-600 border-rose-600 text-white font-bold";
+                  } else {
+                    btnStyle = "bg-white border-slate-200 text-slate-400";
+                  }
+                }
+                return `<button onclick="answerQuiz(${qIdx}, ${oIdx})" class="px-3.5 py-2.5 rounded-xl border text-left text-xs sm:text-sm transition ${btnStyle}">${opt}</button>`;
+              }).join('')}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function answerQuiz(qIdx, oIdx) {
+      if (quizAnswers[qIdx] !== undefined) return;
+      quizAnswers[qIdx] = oIdx;
+      let score = 0;
+      Object.keys(quizAnswers).forEach(k => {
+        if (quizAnswers[k] === quizData[k].ans) score++;
+      });
+      document.getElementById('quiz-score').textContent = `${score} / 10`;
+      renderQuiz();
+    }
+
+    // Initial Render
+    renderQuestions();
+    renderQuiz();
+  </script>
+</body>
+</html>
